@@ -4,7 +4,7 @@ import routesConfig from '~/config/routes'
 import { HeaderOnly } from '~/components/Layout';
 
 // Pages
-import Home from '~/pages/Home';
+import Home from '~/pages/Home/Content';
 import Following from '~/pages/Following';
 import Profile from '~/pages/Profile';
 import Upload from '~/pages/Upload';
