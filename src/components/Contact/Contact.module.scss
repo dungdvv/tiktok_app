@@ -17,7 +17,8 @@
         margin-top: 5px;
         &:hover{
             cursor: pointer;
-            text-decoration: solid;
+            text-decoration: underline rgba(22, 24, 35, .5);;
+            
         }
     }
     .list-a {

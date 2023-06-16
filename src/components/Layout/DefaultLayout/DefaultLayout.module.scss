@@ -14,6 +14,15 @@
 
 .content {
     flex: 1;
+    overflow-y: scroll;
+    height: 100vh;
 }
+.content::-webkit-scrollbar{
+    -webkit-appearance: none;
+}
+.btnGetapp{
+    display: block;
+}
+
 
 
