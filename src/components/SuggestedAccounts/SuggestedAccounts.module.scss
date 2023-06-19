@@ -1,59 +1,58 @@
-.wrapper{
-    border-top: 1px solid #e3e3e4;
-    margin-top: 1rem;
-    width: 224px;
+.wrapper {
+  border-top: 1px solid #e3e3e4;
+  margin-top: 1rem;
+  width: 224px;
+  margin-left: 1.2rem;
 }
-.label{
-    margin-top: 1rem;
-    padding: 8px;
-    font-size: 1.4rem;
-    font-weight: 400;
+.label {
+  margin-top: 1rem;
+  padding: 8px;
+  font-size: 1.4rem;
+  font-weight: 400;
 }
 .account-item {
-    display: flex;
-    padding: 8px;
-    cursor: pointer;
-    &:hover{
-        background-color:#16182308;
-    }
-} 
+  display: flex;
+  padding: 8px;
+  cursor: pointer;
+  &:hover {
+    background-color: #16182308;
+  }
+}
 
 .avatar {
-    width: 3.2rem;
-    height: 3.2rem;
-    border-radius: 50%;
-    object-fit: cover;
-} 
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
 .item-info {
-    flex: 1;
-    margin-left: 1.2rem;
-} 
+  flex: 1;
+  margin-left: 1.2rem;
+}
 
 .nickname {
-    font-size: 1.6rem;
-    color: #161823;
-    margin-top: -0.4rem;
-} 
+  font-size: 1.6rem;
+  color: #161823;
+  margin-top: -0.4rem;
+}
 
-
-
-.icon{
-    font-size: 1.4rem; 
-    color: #20d5ec;
-    margin-left: 0.5rem;
-    margin-bottom: 0.2rem;
+.icon {
+  font-size: 1.4rem;
+  color: #20d5ec;
+  margin-left: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .name {
-    font-size: 1.2rem;
-    opacity: #161823bf;
-} 
+  font-size: 1.2rem;
+  opacity: #161823bf;
+}
 
-.more-btn{
-    font-size: 1.4rem;
-    color:#fe2c55 ;
-    padding: 8px;
-    font-weight: 700;
-    cursor: pointer;
+.more-btn {
+  font-size: 1.4rem;
+  color: #fe2c55;
+  padding: 8px;
+  font-weight: 700;
+  cursor: pointer;
 }

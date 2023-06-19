@@ -1,0 +1,10 @@
+.home-wrapper {
+  width: 100%;
+  .home-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    margin-left: 14%;
+  }
+}

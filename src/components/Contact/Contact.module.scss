@@ -1,28 +1,26 @@
 .contact-menu {
-    border-top: 1px solid #e3e3e4;
-    width: 224px;
-    height: 224px;
-    position: fixed;
-    display: block;
-    margin-top: 0;
-    bottom: 0;
-    a,
-    span {
-        color: rgba(22, 24, 35, 0.5);
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 17px;
-        display: inline-block;
-        margin-right: 6px;
-        margin-top: 5px;
-        &:hover{
-            cursor: pointer;
-            text-decoration: underline rgba(22, 24, 35, .5);;
-            
-        }
+  border-top: 1px solid #e3e3e4;
+  width: 224px;
+  height: 224px;
+  display: block;
+  margin-top: 0;
+  bottom: 0;
+  margin-left: 2rem;
+  a,
+  span {
+    color: rgba(22, 24, 35, 0.5);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    display: inline-block;
+    margin-right: 6px;
+    margin-top: 5px;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline rgba(22, 24, 35, 0.5);
     }
-    .list-a {
-        margin-top: 0.6rem;
-    };
-        
+  }
+  .list-a {
+    margin-top: 0.6rem;
+  }
 }

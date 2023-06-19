@@ -1,63 +1,69 @@
-.btn-getApp{
-    position: fixed;
-    padding: 2px 20px;
-    bottom: 3rem;
-    right: 3rem;
-    border: 1px solid rgba(22, 24, 35, .12);
-    border-radius: 2rem;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 30px;
-    color: #696464;
-    background-color: rgba(255, 255, 255, 1);
-    &:hover{
-        cursor: pointer;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-        border: 1px solid rgba(22,24,35, .20);
-    }
+.btn-getApp {
+  position: fixed;
+  padding: 2px 20px;
+  bottom: 3rem;
+  right: 3rem;
+  border: 1px solid rgba(22, 24, 35, 0.12);
+  border-radius: 2rem;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 30px;
+  color: #696464;
+  background-color: rgba(255, 255, 255, 1);
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(22, 24, 35, 0.2);
+  }
 }
-.btnShow{
-    width: 272px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    bottom: 3rem;
-    right: 3rem;
-    font-weight: 700;
-    font-size: 16px;
-    .btnDesktop, .btnMobile{
-        width: 100%;
-        height: 50%;
-        border-radius: 8px;
-        background: #fff;
-        font-size: 15px;
-        font-weight: bold;
-        border-bottom: 1px solid #d4cece;
-        justify-content: space-between;
-        cursor: pointer;
-        &:hover{
-            text-decoration: underline;
-            background-color: rgba(22, 24, 35, 0.031372549);
-        }
-        .desktop{
-            padding: 0 1rem;
-        }
-        .close{
-            padding: 0 1rem;
-            &:hover{
-               color: var(--primary);
 
-            }
-            
-        }
+.btnShow {
+  width: 272px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  font-weight: 700;
+  font-size: 16px;
+
+  .divier {
+    width: 80%;
+    height: 1px;
+    background: rgba(22, 24, 35, 0.12);
+  }
+
+  .btnDesktop,
+  .btnMobile {
+    width: 100%;
+    height: 50%;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(22, 24, 35, 0.031372549);
     }
-    .btnMobile{
-        border: none;
-        padding-right: 8.4rem;
-        .mobile{
-            padding: 0 1.2rem;
-        }
+    .desktop {
+      padding: 0 1rem;
     }
+    .close {
+      padding: 0 1rem;
+      &:hover {
+        color: var(--primary);
+      }
+    }
+  }
+  .btnMobile {
+    border: none;
+    padding-right: 8.4rem;
+    .mobile {
+      padding: 0 1.2rem;
+    }
+  }
 }
