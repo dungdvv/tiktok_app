@@ -19,12 +19,13 @@ const cx = classNames.bind(styles);
 
 function TableSidebar() {
   return (
-    <aside>
+    <aside >
       <Menu
         style={{
           borderRight: '1px solid #e4cece',
-          paddingInline: '20px',
+          paddingInline: '10px',
           height: '100%',
+          borderBottom: '1px solid #e4cece'
         }}
       >
         <MenuItem

@@ -11,7 +11,7 @@ function AccountItem({data}) {
         <div className={cx('wrapper')}>
             <img
                 className={cx('avatar')}
-                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/326025489_1178480679476952_6889594312483394006_n.jpg?stp=dst-jpg_p526x296&_nc_cat=110&ccb=1-7&_nc_sid=174925&_nc_ohc=EoDWM5-MndAAX90PYJV&_nc_ht=scontent.fhan2-4.fna&oh=00_AfD5P972QVqo_aLmAzNhVbGR0b5AZuJFbS8ZcqhW8KU8FQ&oe=6488097C"
+                src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/342645050_551831290354362_3746681521425656446_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=sg7o5cIbbvMAX98jCch&_nc_ht=scontent.fhan17-1.fna&oh=00_AfD68J82oVfwLqj5LbRD2xPNf-X9vTotsoZiACoXx1M_Kw&oe=64967563"
                 alt="Thao"
             />
             <div className={cx('info')}>
@@ -19,7 +19,7 @@ function AccountItem({data}) {
                     <span>Thu Thao</span>
                     <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
                 </h4>
-                <span className={cx('username')}>Thu Thao</span>
+                <span className={cx('username')}>Nguyen Thi Thu Thao</span>
             </div>
         </div>
     );

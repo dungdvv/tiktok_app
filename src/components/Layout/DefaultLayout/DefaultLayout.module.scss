@@ -5,6 +5,8 @@
   position: relative;
 }
 
+
+
 .container {
   display: flex;
 }
@@ -13,7 +15,8 @@
   flex: 1;
   overflow-y: scroll;
   height: 100vh;
-}
+  }
+
 .content::-webkit-scrollbar {
   -webkit-appearance: none;
 }
