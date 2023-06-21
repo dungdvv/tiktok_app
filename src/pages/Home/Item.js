@@ -6,7 +6,6 @@ import { faCheckCircle, faComment, faHeart, faMusic, faShare, faTags } from '@fo
 import { useEffect, useRef, useState } from 'react';
 import { useElementOnScreen } from './Content';
 import './video.scss';
-import { isVisible } from '@testing-library/user-event/dist/utils';
 
 const cx = classNames.bind(styles);
 
@@ -16,8 +15,6 @@ function Items() {
   const buttonRef = useRef();
 
   const handleVideo = () => {
-    console.log('clicked');
-    videoRef.current.seekTo(0);
     videoRef.current.play();
   };
 
@@ -27,10 +24,9 @@ function Items() {
     threshold: 0.3,
   };
 
-  // ---------------------
-  const [isVisibile, setIsVisible] = useState();
+  const [isVisibile, setIsVisible] = useState(true);
   const callbackFunction = (entries) => {
-    const [entry] = entries; //const entry = entries[0]
+    const [entry] = entries;
     setIsVisible(entry.isIntersecting);
   };
 
@@ -41,23 +37,17 @@ function Items() {
     return () => observer.unobserve(currentTarget);
   }, [videoRef, options]);
 
-  // ---------------------
+  // useEffect(() => {
+  //   if (isVisibile == true && videoRef.current !== undefined) {
+  //     videoRef.current?.play();
+  //   } else {
+  //     videoRef.current?.pause();
+  //   }
+  // }, [isVisibile]);
 
-  useEffect(() => {
-    console.log('click in useefect', isVisibile);
-
-    console.log({
-      checkaa: videoRef.current !== undefined,
-    });
-    if (isVisibile == true && videoRef.current !== undefined) {
-      console.log('runing');
-      videoRef.current?.seekTo(0);
-      videoRef.current?.play();
-    } else {
-      console.log('not runing');
-    }
-  }, [isVisibile]);
-
+  console.log({
+    isVisibile,
+  });
   return (
     <>
       <div
@@ -89,31 +79,61 @@ function Items() {
               <button className={cx('button')}>Follow</button>
             </div>
           </div>
-          <button ref={buttonRef} onClick={handleVideo}>
-            Run video
-          </button>
           <div className={cx('container')} ref={containerVideoRef}>
-            <ReactPlayer
-              className={cx('video')}
-              ref={videoRef}
-              // onClick={handleVideo}
-              muted={false}
-              url="https://www.youtube.com/embed/M5vCdwZ1HaY"
-              // controls={false}
-              // loop={true}
-              // onReady={() => handleVisibilityChange(inView)}
-              config={{
-                youtube: {
-                  playerVars: {
-                    modestbranding: 1,
-                    disablekb: 1,
-                    cc_load_policy: 0,
-                    playsinline: 1,
-                    controlsList: 'nodownload',
+            {/* <video className={cx('video')} controls ref={videoRef}>
+              <source src="https://youtu.be/1RM8SJ4KFUE" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video> */}
+
+            {isVisibile ? (
+              <>
+                runing
+                <ReactPlayer
+                  className={cx('video')}
+                  // ref={videoRef}
+                  // onClick={handleVideo}
+                  playing={true}
+                  muted={false}
+                  url="https://www.youtube.com/embed/M5vCdwZ1HaY"
+                  // controls={false}
+                  // loop={true}
+                  // onReady={() => handleVisibilityChange(inView)}
+                  // config={{
+                  //   youtube: {
+                  //     playerVars: {
+                  //       modestbranding: 1,
+                  //       disablekb: 1,
+                  //       cc_load_policy: 0,
+                  //       playsinline: 1,
+                  //       controlsList: 'nodownload',
+                  //     },
+                  //   },
+                  // }}
+                />
+              </>
+            ) : (
+              <ReactPlayer
+                className={cx('video')}
+                // ref={videoRef}
+                // onClick={handleVideo}
+                muted={false}
+                url="https://www.youtube.com/embed/M5vCdwZ1HaY"
+                // controls={false}
+                // loop={true}
+                // onReady={() => handleVisibilityChange(inView)}
+                config={{
+                  youtube: {
+                    playerVars: {
+                      modestbranding: 1,
+                      disablekb: 1,
+                      cc_load_policy: 0,
+                      playsinline: 1,
+                      controlsList: 'nodownload',
+                    },
                   },
-                },
-              }}
-            />
+                }}
+              />
+            )}
 
             <div className={cx('list-icons')}>
               <FontAwesomeIcon className={cx('icon')} icon={faHeart} />
