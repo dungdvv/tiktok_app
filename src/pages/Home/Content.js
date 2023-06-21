@@ -28,14 +28,15 @@ export const useElementOnScreen = (options, targetRef) => {
   const optionsMemo = useMemo(() => {
     return options;
   }, [options]);
+
   useEffect(() => {
     const observer = new IntersectionObserver(callbackFunction, optionsMemo);
     const currentTarget = targetRef.current;
-    if (currentTarget) observer.unobserve(currentTarget);
-    return () => {
-      if (currentTarget) observer.unobserve(currentTarget);
-    };
+    if (currentTarget) return observer.observe(currentTarget);
+
+    return () => observer.unobserve(currentTarget);
   }, [targetRef, optionsMemo]);
+
   return isVisibile;
 };
 

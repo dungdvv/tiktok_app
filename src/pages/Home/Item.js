@@ -12,36 +12,52 @@ const cx = classNames.bind(styles);
 
 function Items() {
   const videoRef = useRef();
-  const [playing, setPlaying] = useState(false);
+  const containerVideoRef = useRef();
+  const buttonRef = useRef();
+
   const handleVideo = () => {
-    if (playing) {
-      videoRef.current.pause();
-      setPlaying(false);
-    } else {
-      videoRef.current.play();
-      setPlaying(true);
-    }
+    console.log('clicked');
+    videoRef.current.seekTo(0);
+    videoRef.current.play();
   };
+
   const options = {
     root: null,
-    rootMargin: "0px",
+    rootMargin: '0px',
     threshold: 0.3,
   };
-  const isVisibile = useElementOnScreen(options, videoRef);
+
+  // ---------------------
+  const [isVisibile, setIsVisible] = useState();
+  const callbackFunction = (entries) => {
+    const [entry] = entries; //const entry = entries[0]
+    setIsVisible(entry.isIntersecting);
+  };
 
   useEffect(() => {
-    if (isVisibile) {
-      if (!playing) {
-        videoRef.current.play();
-        setPlaying(true);
-      }
+    const observer = new IntersectionObserver(callbackFunction, options);
+    const currentTarget = containerVideoRef.current;
+    if (currentTarget) return observer.observe(currentTarget);
+    return () => observer.unobserve(currentTarget);
+  }, [videoRef, options]);
+
+  // ---------------------
+
+  useEffect(() => {
+    console.log('click in useefect', isVisibile);
+
+    console.log({
+      checkaa: videoRef.current !== undefined,
+    });
+    if (isVisibile == true && videoRef.current !== undefined) {
+      console.log('runing');
+      videoRef.current?.seekTo(0);
+      videoRef.current?.play();
     } else {
-      if (playing) {
-        videoRef.current.pause();
-        setPlaying(false);
-      }
+      console.log('not runing');
     }
   }, [isVisibile]);
+
   return (
     <>
       <div
@@ -73,11 +89,14 @@ function Items() {
               <button className={cx('button')}>Follow</button>
             </div>
           </div>
-          <div className={cx('container')}>
+          <button ref={buttonRef} onClick={handleVideo}>
+            Run video
+          </button>
+          <div className={cx('container')} ref={containerVideoRef}>
             <ReactPlayer
               className={cx('video')}
               ref={videoRef}
-              onClick={handleVideo}
+              // onClick={handleVideo}
               muted={false}
               url="https://www.youtube.com/embed/M5vCdwZ1HaY"
               // controls={false}
