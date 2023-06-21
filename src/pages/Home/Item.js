@@ -87,7 +87,6 @@ function Items() {
 
             {isVisibile ? (
               <>
-                runing
                 <ReactPlayer
                   className={cx('video')}
                   // ref={videoRef}
