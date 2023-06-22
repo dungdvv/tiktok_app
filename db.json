@@ -1,0 +1,160 @@
+{
+  "following": [
+    {
+      "userId": "1",
+      "avatar": "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+      "userName": "FreZe",
+      "fullName": "Dao Van Viet Dung",
+      "video": "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "userId": "2",
+      "avatar": "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+      "userName": "Thu Thao",
+      "fullName": "Nguyen Thi Thu Thao",
+      "video": "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "userId": "3",
+      "avatar": "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+      "userName": "theanh28",
+      "fullName": "Theanh28entertainment",
+      "video": "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "userId": "2",
+      "avatar": "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+      "userName": "bbb",
+      "fullName": "full name",
+      "video": "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "userId": "2",
+      "avatar": "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+      "userName": "bbb",
+      "fullName": "full name",
+      "video": "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "userId": "2",
+      "avatar": "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+      "userName": "bbb",
+      "fullName": "full name",
+      "video": "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "userId": "2",
+      "avatar": "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+      "userName": "bbb",
+      "fullName": "full name",
+      "video": "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "userId": "2",
+      "avatar": "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+      "userName": "bbb",
+      "fullName": "full name",
+      "video": "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "userId": "2",
+      "avatar": "https://kenh14cdn.com/thumb_w/660/2020/7/17/brvn-15950048783381206275371.jpg",
+      "userName": "bbb",
+      "fullName": "full name",
+      "video": "https://www.youtube.com/shorts/csvctnt6ELU"
+    }
+  ],
+  "explore": [
+    {
+      "description": "Giao diện cute mà hệ điều hành lạ quá 😂 ",
+      "profile": "halinhofficial",
+      "heart": "119.8K",
+      "video" : "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "description": "THƯƠNG THẢO VY 😢 #theanh28sport #theanh28 #28sport #tiktoknews",
+      "profile": "theanh28",
+      "heart": "129.7K",
+      "video" : "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "description": "NGHỆ CẢ VƯỜN LUÔN😍#theanh28sport #theanh28 #28sport #tiktoknews ",
+      "profile": "theanh28sport",
+      "heart": "119.8K",
+      "video" : "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "description": "Giao diện cute mà hệ điều hành lạ quá 😂 ",
+      "profile": "halinhofficial",
+      "heart": "119.8K",
+      "video" : "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "description": "Giao diện cute mà hệ điều hành lạ quá 😂 ",
+      "profile": "halinhofficial",
+      "heart": "119.8K",
+      "video" : "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "description": "Giao diện cute mà hệ điều hành lạ quá 😂 ",
+      "profile": "halinhofficial",
+      "heart": "119.8K",
+      "video" : "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "description": "Giao diện cute mà hệ điều hành lạ quá 😂 ",
+      "profile": "halinhofficial",
+      "heart": "119.8K",
+      "video" : "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "description": "Giao diện cute mà hệ điều hành lạ quá 😂 ",
+      "profile": "halinhofficial",
+      "heart": "119.8K",
+      "video" : "https://www.youtube.com/shorts/csvctnt6ELU"
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "title": "Video 1",
+      "url": "https://www.youtube.com/shorts/csvctnt6ELU"
+    },
+    {
+      "id": 2,
+      "title": "Video 2",
+      "url": "https://www.youtube.com/shorts/fwxxhHzHHWA"
+    },
+    {
+      "id": 3,
+      "title": "Video 3",
+      "url": "https://www.youtube.com/shorts/Wup2tw1YVtM"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "avatar": "https://example.com/users/1/avatar"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "avatar": "https://example.com/users/2/avatar"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "text": "Great video!",
+      "videoId": 1,
+      "userId": 2
+    },
+    {
+      "id": 2,
+      "text": "Love it!",
+      "videoId": 2,
+      "userId": 1
+    }
+  ]
+}

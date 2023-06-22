@@ -5,10 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faComment, faHeart, faMusic, faShare, faTags } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useRef, useState } from 'react';
 
-
 const cx = classNames.bind(styles);
 
-function Items() {
+function Item({ isFirstVideo }) {
   const videoRef = useRef();
   const containerVideoRef = useRef();
   const [isVisible, setIsVisible] = useState(true);
@@ -19,17 +18,13 @@ function Items() {
     threshold: 1.0,
   };
 
-
   useEffect(() => {
     const observer = new IntersectionObserver(callbackFunction, options);
     const currentTarget = containerVideoRef.current;
     if (currentTarget) return observer.observe(currentTarget);
     return () => observer.unobserve(currentTarget);
   }, [options]);
-    console.log({
-    isVisible,
-  });
-  
+
   const callbackFunction = (entries) => {
     const [entry] = entries;
     setIsVisible(entry.isIntersecting);
@@ -37,9 +32,7 @@ function Items() {
 
   return (
     <>
-      <div
-        className={cx('wrapper')}
-      >
+      <div className={cx('wrapper')}>
         <img
           src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/342645050_551831290354362_3746681521425656446_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=sg7o5cIbbvMAX98jCch&_nc_ht=scontent.fhan17-1.fna&oh=00_AfD68J82oVfwLqj5LbRD2xPNf-X9vTotsoZiACoXx1M_Kw&oe=64967563"
           alt="Thu Thao"
@@ -65,28 +58,25 @@ function Items() {
             </div>
           </div>
           <div className={cx('container')} ref={containerVideoRef}>
-
             {isVisible ? (
-              <>
-                <ReactPlayer
-                  ref={videoRef}
-                  className={cx('video')}
-                  playing={true}
-                  muted={false}
-                  url="https://www.youtube.com/embed/M5vCdwZ1HaY"
-                  config={{
-                    youtube: {
-                      playerVars: {
-                        modestbranding: 1,
-                        disablekb: 1,
-                        cc_load_policy: 0,
-                        playsinline: 1,
-                        controlsList: 'nodownload',
-                      },
+              <ReactPlayer
+                ref={videoRef}
+                className={cx('video')}
+                playing={true}
+                muted={false}
+                url="https://www.youtube.com/embed/M5vCdwZ1HaY"
+                config={{
+                  youtube: {
+                    playerVars: {
+                      modestbranding: 1,
+                      disablekb: 1,
+                      cc_load_policy: 0,
+                      playsinline: 1,
+                      controlsList: 'nodownload',
                     },
-                  }}
-                />
-              </>
+                  },
+                }}
+              />
             ) : (
               <ReactPlayer
                 className={cx('video')}
@@ -122,4 +112,4 @@ function Items() {
     </>
   );
 }
-export default Items;
+export default Item;

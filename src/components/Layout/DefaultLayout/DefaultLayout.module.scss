@@ -5,17 +5,19 @@
   position: relative;
 }
 
-
-
 .container {
   display: flex;
 }
 
 .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   flex: 1;
   overflow-y: scroll;
   height: 100vh;
-  }
+  max-width: 800px;
+}
 
 .content::-webkit-scrollbar {
   -webkit-appearance: none;

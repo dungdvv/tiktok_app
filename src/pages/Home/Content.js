@@ -1,5 +1,4 @@
-
-import Items from './Item';
+import Item from './Item';
 
 import './style.scss';
 
@@ -7,13 +6,13 @@ function Home() {
   return (
     <div className="home-wrapper">
       <div className="home-body">
-        <Items />
-        <Items />
-        <Items />
-        <Items />
-        <Items />
-        <Items />
-        <Items />
+        <Item isFirstVideo={true} />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
+        <Item />
       </div>
     </div>
   );

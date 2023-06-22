@@ -1,0 +1,60 @@
+.wrapper {
+  margin-top: 3.6rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+  .video {
+    max-width: 226px;
+    max-height: 302px;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+}
+.body {
+  position: absolute;
+  transform: translate(19%, 32%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  h3 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .title {
+    span {
+      color: #fff;
+    }
+    .icon {
+      color: #20d5ec;
+      margin-left: 3px;
+    }
+  }
+  button {
+    background-color: rgb(254, 44, 85);
+    width: 160px;
+    min-height: 36px;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 600;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 1rem;
+  }
+  .Following {
+    background: #fff;
+    color: black;
+  }
+}
