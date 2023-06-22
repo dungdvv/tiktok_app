@@ -8,6 +8,8 @@ const auth = {
     };
 
     const response = request.post('/login', payload);
+
+    return response;
   },
   register: () => {},
 };

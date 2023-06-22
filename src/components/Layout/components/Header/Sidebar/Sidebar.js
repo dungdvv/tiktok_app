@@ -15,9 +15,14 @@ import config from '~/config';
 import SuggestedAccounts from '~/components/SuggestedAccounts/SuggestedAccounts';
 import Contact from '~/components/Contact/Contact';
 
+import { useContext } from 'react';
+import { useHeader } from '~/components/Layout/DefaultLayout/HeaderContext';
+
 const cx = classNames.bind(styles);
 
 function Sidebar() {
+  const { currentUser } = useHeader();
+
   return (
     <aside className={cx('wrapper')}>
       <Menu>
@@ -36,7 +41,9 @@ function Sidebar() {
         />
         <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
       </Menu>
-      <SuggestedAccounts label="Following Account" />
+
+      {currentUser && <SuggestedAccounts label="Following Account" />}
+
       <Contact />
     </aside>
   );

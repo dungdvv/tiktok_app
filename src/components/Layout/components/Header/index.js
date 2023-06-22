@@ -4,7 +4,7 @@
 
 // packages libs, package hooks
 
-// Components 
+// Components
 
 // Images, Videos, file dox
 
@@ -14,9 +14,8 @@
 
 // constants
 
-
 /**
- * 
+ *
  */
 
 import classNames from 'classnames/bind';
@@ -46,6 +45,9 @@ import { useWindowSize } from '@uidotdev/usehooks';
 import { tableBreakPoint } from 'src/constants';
 
 import london from 'src/assets/images/london.jpg';
+import { createContext, useContext, useMemo, useState } from 'react';
+import Modal from './Modal';
+import { useHeader } from '../../DefaultLayout/HeaderContext';
 
 const cx = classNames.bind(styles);
 
@@ -81,13 +83,17 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-  const currentUser = true;
+  const { currentUser, setCurrentUser } = useHeader();
 
   const { width } = useWindowSize();
 
   // Handle logic
   const handleMenuChange = (menuItem) => {
+    console.log({ menuItem });
     switch (menuItem.type) {
+      case 'logout':
+        setCurrentUser(false);
+        break;
       case 'language':
         // handle change lange
         break;
@@ -114,18 +120,32 @@ function Header() {
     {
       icon: <FontAwesomeIcon icon={faSignOut} />,
       title: 'Log out',
-      to: '/logout',
+      to: '#!',
       separate: true,
+      type: 'logout',
     },
   ];
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
+
+  const handleLogin = () => {
+    setCurrentUser(true);
+    handleCloseModal();
+  };
 
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
         <img src={images.logo} alt="Tiktok" />
-
         {width > tableBreakPoint ? <Search /> : ''}
-
         <div className={cx('actions')}>
           {currentUser ? (
             <>
@@ -149,9 +169,17 @@ function Header() {
           ) : (
             <>
               <Button text>Upload</Button>
-              <Button primary>Log in</Button>
+              <Button primary onClick={handleOpenModal}>
+                Log in
+              </Button>
+              <Modal isOpen={isOpen} onClose={handleCloseModal}>
+                <Button primary onClick={handleLogin}>
+                  Confirm Log gin
+                </Button>
+              </Modal>
             </>
           )}
+
           <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
             {currentUser ? (
               <img className={cx('user-avatar')} src={london} alt="Nguyen Thu Thao" />

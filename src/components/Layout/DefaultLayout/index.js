@@ -6,6 +6,7 @@ import GetApp from '../components/Header/GetApp/GetApp';
 import TableSidebar from '../components/Header/Sidebar/TableSidebar';
 import { useWindowSize } from '@uidotdev/usehooks';
 import { tableBreakPoint } from 'src/constants';
+import { HeaderProvider } from './HeaderContext';
 
 const cx = classNames.bind(styles);
 
@@ -15,14 +16,16 @@ function DefaultLayout({ children }) {
   const sidebar = tableBreakPoint >= width ? <TableSidebar /> : <Sidebar />;
 
   return (
-    <div className={cx('wrapper')}>
-      <Header />
-      <div className={cx('container')}>
-        {sidebar}
-        <div className={cx('content')}>{children}</div>
+    <HeaderProvider>
+      <div className={cx('wrapper')}>
+        <Header />
+        <div className={cx('container')}>
+          {sidebar}
+          <div className={cx('content')}>{children}</div>
+        </div>
+        <GetApp />
       </div>
-      <GetApp />
-    </div>
+    </HeaderProvider>
   );
 }
 

@@ -17,4 +17,16 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   },
 );
+
+// Add a response interceptor
+axios.interceptors.request.use(
+  (response) => {
+    // token,
+    return response;
+  },
+  (error) => {
+    return Promise.reject(error);
+  },
+);
+
 export default request;

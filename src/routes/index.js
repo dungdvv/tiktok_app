@@ -11,6 +11,7 @@ import Upload from '~/pages/Upload';
 import Search from '~/pages/Search';
 import Live from '~/pages/Live/Live';
 import Explore from '~/pages/Explore/Explore';
+import LogOut from '~/components/Logout/Logout';
 
 // Public routes
 const publicRoutes = [
@@ -21,7 +22,7 @@ const publicRoutes = [
     { path: routesConfig.search, component: Search, layout: null },
     { path: routesConfig.live, component: Live },
     { path: routesConfig.explore, component: Explore },
-
+    { path: routesConfig.LogOut, component: LogOut}
 
 ];
 
