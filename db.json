@@ -143,18 +143,9 @@
       "avatar": "https://example.com/users/2/avatar"
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "text": "Great video!",
-      "videoId": 1,
-      "userId": 2
-    },
-    {
-      "id": 2,
-      "text": "Love it!",
-      "videoId": 2,
-      "userId": 1
-    }
-  ]
+    "comments": [
+      { "id": 1, "text": "Hay qua <3", "author": "freze", "likes": 10 },
+      { "id": 2, "text": "Zababue!!!", "author": "thuthao", "likes": 5 },
+      { "id": 3, "text": "Goodjob", "author": "nhokvipro", "likes": 2 }
+    ]
 }

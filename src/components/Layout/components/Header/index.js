@@ -174,7 +174,7 @@ function Header() {
               </Button>
               <Modal isOpen={isOpen} onClose={handleCloseModal}>
                 <Button primary onClick={handleLogin}>
-                  Confirm Log gin
+                  Login
                 </Button>
               </Modal>
             </>
