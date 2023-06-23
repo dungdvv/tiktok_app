@@ -15,7 +15,6 @@ import config from '~/config';
 import SuggestedAccounts from '~/components/SuggestedAccounts/SuggestedAccounts';
 import Contact from '~/components/Contact/Contact';
 
-import { useContext } from 'react';
 import { useHeader } from '~/components/Layout/DefaultLayout/HeaderContext';
 
 const cx = classNames.bind(styles);

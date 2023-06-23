@@ -18,9 +18,11 @@ function DefaultLayout({ children }) {
   return (
     <HeaderProvider>
       <div className={cx('wrapper')}>
-        <Header />
+        <div className={cx('fixed-header')}>
+          <Header />
+        </div>
         <div className={cx('container')}>
-          {sidebar}
+          <div className={cx('fixed-sidebar')}>{sidebar}</div>
           <div className={cx('content')}>{children}</div>
         </div>
         <GetApp />

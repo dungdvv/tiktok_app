@@ -4,6 +4,7 @@ import ReactPlayer from 'react-player';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faComment, faHeart, faMusic, faShare, faTags } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -98,7 +99,9 @@ function Item({ isFirstVideo }) {
             <div className={cx('list-icons')}>
               <FontAwesomeIcon className={cx('icon')} icon={faHeart} />
               <span className={cx('value-heart')}>139.5k</span>
-              <FontAwesomeIcon className={cx('icon')} icon={faComment} />
+              <Link to="/video-detail/123">
+                <FontAwesomeIcon className={cx('icon')} icon={faComment} />
+              </Link>
               <span className={cx('value-comment')}>20k</span>
               <FontAwesomeIcon className={cx('icon')} icon={faTags} />
               <span className={cx('value-tags')}>12.5k</span>

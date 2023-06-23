@@ -1,0 +1,56 @@
+.video-detail {
+  display: flex;
+  gap: 50px;
+
+  .img-avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+  .section-comment {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    .comments {
+      list-style: unset;
+      padding: 0;
+      margin: 0;
+
+      .comment-item {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 30px;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(147, 138, 138);
+        position: relative;
+        .user {
+          display: flex;
+          font-size: 20px;
+          position: absolute;
+          left: 3rem;
+        }
+        .button-send{
+          border-radius: 5px;
+          padding: 0 12px;
+        }
+      }
+    }
+    .form-comment {
+      .input-comment {
+        font-size: 2.5rem;
+        border: 2px solid rgb(149, 141, 141);
+        border-radius: 5px;
+      }
+      
+      .button-submit-comment {
+        font-size: 2.5rem;
+        // display: flex;
+        border-radius: 5px;
+        padding: 0.1rem 1.4rem;
+        color: #fff;
+        background: var(--primary);
+        border: 1px solid rgb(149, 141, 141);
+        cursor: pointer;
+      }
+    }
+  }
+}
