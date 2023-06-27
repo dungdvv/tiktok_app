@@ -14,18 +14,18 @@ import {
 import config from '~/config';
 import SuggestedAccounts from '~/components/SuggestedAccounts/SuggestedAccounts';
 import Contact from '~/components/Contact/Contact';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
 function TableSidebar() {
   return (
-    <aside >
+    <aside>
       <Menu
         style={{
-          borderRight: '1px solid #e4cece',
+          borderRight: '1px solid #ececec',
           paddingInline: '10px',
-          height: '100%',
-          borderBottom: '1px solid #e4cece'
+          height: '100vh',
         }}
       >
         <MenuItem
@@ -63,11 +63,13 @@ function TableSidebar() {
           style={{
             paddingRight: 0,
             marginRight: 0,
+            borderBottom: '1px solid #ececec',
           }}
           to={config.routes.live}
           icon={<LiveIcon />}
           activeIcon={<LiveActiveIcon />}
         />
+        {/* <Button /> */}
       </Menu>
       {/* <SuggestedAccounts label="Following Account" />
       <Contact /> */}

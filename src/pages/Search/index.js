@@ -7,6 +7,7 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
 import styles from './Search.module.scss';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -42,10 +43,12 @@ function Search() {
           <div className={cx('search-result')} tabIndex="-1" {...attrs}>
             <PopperWrapper>
               <h4 className={cx('search-title')}>Accounts</h4>
-              <AccountItem />
-              <AccountItem />
-              <AccountItem />
-              <AccountItem />
+              <Link to="/@thuthao">
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+                <AccountItem />
+              </Link>
             </PopperWrapper>
           </div>
         )}

@@ -16,6 +16,7 @@ import SuggestedAccounts from '~/components/SuggestedAccounts/SuggestedAccounts'
 import Contact from '~/components/Contact/Contact';
 
 import { useHeader } from '~/components/Layout/DefaultLayout/HeaderContext';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
@@ -41,8 +42,8 @@ function Sidebar() {
         <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
       </Menu>
 
-      {currentUser && <SuggestedAccounts label="Following Account" />}
-
+      {currentUser && <SuggestedAccounts label="Following Account"/>}
+      
       <Contact />
     </aside>
   );

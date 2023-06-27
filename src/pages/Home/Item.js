@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faComment, faHeart, faMusic, faShare, faTags } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
@@ -12,7 +13,11 @@ function Item({ isFirstVideo }) {
   const videoRef = useRef();
   const containerVideoRef = useRef();
   const [isVisible, setIsVisible] = useState(true);
-
+  const [following, setFollowing] = useState(false);
+  const handleFollow = () => {
+    setFollowing(!following);
+  };
+  const FollowText = following ? 'Following' : 'Follow';
   const options = {
     root: null,
     rootMargin: '0px',
@@ -44,7 +49,9 @@ function Item({ isFirstVideo }) {
             <div className={cx('info')}>
               <div className={cx('info-left')}>
                 <div className={cx('info-name')}>
-                  <h3> nguyenthuthao </h3>
+                  <h3>
+                    <Link to="/@thuthao">nguyenthuthao</Link>
+                  </h3>
                   <FontAwesomeIcon icon={faCheckCircle} className={cx('icon')} />
                   <p> Nguyễn Thu Thảo</p>
                 </div>
@@ -55,7 +62,9 @@ function Item({ isFirstVideo }) {
                   <span>Original sound - legend never die</span>
                 </span>
               </div>
-              <button className={cx('button')}>Follow</button>
+              <button className={cx('button', { following })} onClick={handleFollow}>
+                {FollowText}
+              </button>
             </div>
           </div>
           <div className={cx('container')} ref={containerVideoRef}>
@@ -111,6 +120,7 @@ function Item({ isFirstVideo }) {
           </div>
         </div>
       </div>
+      {/* <Button /> */}
       <div className={cx('divier')} />
     </>
   );

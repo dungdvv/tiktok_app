@@ -48,6 +48,7 @@ import london from 'src/assets/images/london.jpg';
 import { createContext, useContext, useMemo, useState } from 'react';
 import Modal from './Modal';
 import { useHeader } from '../../DefaultLayout/HeaderContext';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -144,7 +145,9 @@ function Header() {
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
-        <img src={images.logo} alt="Tiktok" />
+        <Link to="/">
+          <img src={images.logo} alt="Tiktok" />
+        </Link>
         {width > tableBreakPoint ? <Search /> : ''}
         <div className={cx('actions')}>
           {currentUser ? (

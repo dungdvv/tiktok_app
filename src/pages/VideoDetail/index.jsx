@@ -46,9 +46,9 @@ const VideoDetail = () => {
       <div className="video">
         <Item />
       </div>
-
       <div className="section-comment">
         <ul className="comments">
+          <h2>Comments </h2>
           {commentsState.map(({ text, author, id, img }) => {
             return (
               <div className="comment-item">

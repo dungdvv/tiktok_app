@@ -9,13 +9,10 @@
   }
   .section-comment {
     font-size: 2.5rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
     .comments {
-      list-style: unset;
-      padding: 0;
-      margin: 0;
-
       .comment-item {
+        margin-top: 2rem;
         display: flex;
         flex-direction: row;
         margin-bottom: 30px;
@@ -28,7 +25,7 @@
           position: absolute;
           left: 3rem;
         }
-        .button-send{
+        .button-send {
           border-radius: 5px;
           padding: 0 12px;
         }
@@ -40,7 +37,7 @@
         border: 2px solid rgb(149, 141, 141);
         border-radius: 5px;
       }
-      
+
       .button-submit-comment {
         font-size: 2.5rem;
         // display: flex;
