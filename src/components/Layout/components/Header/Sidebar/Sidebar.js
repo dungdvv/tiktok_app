@@ -42,8 +42,15 @@ function Sidebar() {
         <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
       </Menu>
 
-      {currentUser && <SuggestedAccounts label="Following Account"/>}
-      
+      {currentUser && <SuggestedAccounts label="Following Account" />}
+
+      {!currentUser && (
+        <div>
+          <p>Đăng nhập để follow các tác giả, thích video và xem bình luận.</p>
+          <Button primary>Log in</Button>
+        </div>
+      )}
+
       <Contact />
     </aside>
   );
