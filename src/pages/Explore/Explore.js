@@ -5,6 +5,10 @@ import {
   faCar,
   faCoffee,
   faHeart,
+  faHeartBroken,
+  faHeartCircleExclamation,
+  faHeartCircleXmark,
+  faHeartbeat,
   faMicrophone,
   faPaintBrush,
   faShoppingBag,
@@ -15,6 +19,7 @@ import ReactPlayer from 'react-player';
 import explore from '~/services/explore';
 import { useGetExplore } from '~/queries/explore';
 import { useState } from 'react';
+import { HeartIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 // const iframe = document.getElementById('my-iframe');
@@ -22,6 +27,7 @@ const cx = classNames.bind(styles);
 
 function Explore() {
   const { data: explore } = useGetExplore();
+  const [showList, setShowList] = useState('Dancing');
 
   const buttons = [
     {
@@ -61,7 +67,6 @@ function Explore() {
     },
   ];
 
-  const [showList, setShowList] = useState('Dancing');
 
   return (
     <>
@@ -99,12 +104,16 @@ function Explore() {
                       },
                     }}
                   />
-                  <div>{explores?.description}</div>
+                  <div className={cx('desc')}>{explores?.description}</div>
                   <footer className={cx('footer')}>
-                    <img />
-                    <span>{explores?.profile}</span>
-                    <FontAwesomeIcon icon={faHeart} />
-                    {explore?.faHeart}
+                    <div className={cx('left')}>
+                      <img src={explores?.img} />
+                      <span>{explores?.profile}</span>
+                    </div>
+                    <div className={cx('right')}>
+                      <HeartIcon className={cx('icon')} />
+                      <span>{explores?.heart}</span>
+                    </div>
                   </footer>
                 </div>
               );

@@ -23,3 +23,4 @@ SuggestedAccounts.propTypes = {
 };
 
 export default SuggestedAccounts;
+
