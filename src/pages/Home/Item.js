@@ -11,7 +11,11 @@ function Item({ isFirstVideo }) {
   const videoRef = useRef();
   const containerVideoRef = useRef();
   const [isVisible, setIsVisible] = useState(true);
-
+  const [follow, setFollow] = useState(false);
+  const handleClick = () => {
+    setFollow(!follow);
+  };
+  const buttonText = follow ? 'Following' : 'Follow';
   const options = {
     root: null,
     rootMargin: '0px',
@@ -54,7 +58,9 @@ function Item({ isFirstVideo }) {
                   <span>Original sound - legend never die</span>
                 </span>
               </div>
-              <button className={cx('button')}>Follow</button>
+              <button className={cx('button', { follow })} onClick={handleClick}>
+                {buttonText}
+              </button>
             </div>
           </div>
           <div className={cx('container')} ref={containerVideoRef}>

@@ -17,6 +17,7 @@ import Contact from '~/components/Contact/Contact';
 
 import { useContext } from 'react';
 import { useHeader } from '~/components/Layout/DefaultLayout/HeaderContext';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
@@ -43,6 +44,13 @@ function Sidebar() {
       </Menu>
 
       {currentUser && <SuggestedAccounts label="Following Account" />}
+
+      {!currentUser && (
+        <div>
+          <p>Đăng nhập để follow các tác giả, thích video và xem bình luận.</p>
+          <Button primary>Log in</Button>
+        </div>
+      )}
 
       <Contact />
     </aside>
