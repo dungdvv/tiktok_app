@@ -1,10 +1,21 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from '~/routes';
-import { DefaultLayout } from '~/components/Layout';
+
+import { useAuth } from './context/auth';
+import { useGetMe } from './queries/auth';
+import DefaultLayout from './components/DefaultLayout';
 
 function App() {
-  
+  const { data, isFetched } = useGetMe();
+
+  const { setUser } = useAuth();
+  useEffect(() => {
+    if (data) {
+      setUser(data);
+    }
+  }, [isFetched]);
+
   return (
     <Router>
       <div className="App">

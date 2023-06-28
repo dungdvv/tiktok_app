@@ -1,7 +1,9 @@
 import axios from 'axios';
+import utilsLocalStorage from './utils/utilsLocalStorage';
 
 const request = axios.create({
-  baseURL: 'http://localhost:3004/',
+  // baseURL: 'http://localhost:3004/', // for json-server
+  baseURL: 'http://localhost:8000/', // real api.
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
@@ -18,14 +20,19 @@ axios.interceptors.response.use(
   },
 );
 
-// Add a response interceptor
-axios.interceptors.request.use(
-  (response) => {
-    // token,
-    return response;
+request.interceptors.request.use(
+  (config) => {
+    const token = utilsLocalStorage.getToken();
+    const newConfig = { ...config };
+
+    if (token) {
+      newConfig.headers.Authorization = `Bearer ${token}`;
+    }
+
+    return newConfig;
   },
   (error) => {
-    return Promise.reject(error);
+    Promise.reject(error);
   },
 );
 

@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind';
 import styles from './Sidebar.module.scss';
-import Menu, { MenuItem } from './Menu';
 import {
   HomeIcon,
   HomeActiveIcon,
@@ -11,10 +10,9 @@ import {
   ExploreIcon,
   ExploreActiveIcon,
 } from '~/components/Icons';
-import config from '~/config';
-import SuggestedAccounts from '~/components/SuggestedAccounts/SuggestedAccounts';
-import Contact from '~/components/Contact/Contact';
-import Button from '~/components/Button';
+import { routesConfig } from '~/routes';
+import Menu from './SideBarMenu';
+import MenuItem from './SideBarMenuItem';
 
 const cx = classNames.bind(styles);
 
@@ -34,7 +32,7 @@ function TableSidebar() {
             paddingRight: 0,
             marginRight: 0,
           }}
-          to={config.routes.home}
+          to={routesConfig.home}
           icon={<HomeIcon />}
           activeIcon={<HomeActiveIcon />}
         />
@@ -44,7 +42,7 @@ function TableSidebar() {
             paddingRight: 0,
             marginRight: 0,
           }}
-          to={config.routes.following}
+          to={routesConfig.following}
           icon={<UserGroupIcon />}
           activeIcon={<UserGroupActiveIcon />}
         />
@@ -54,7 +52,7 @@ function TableSidebar() {
             paddingRight: 0,
             marginRight: 0,
           }}
-          to={config.routes.explore}
+          to={routesConfig.explore}
           icon={<ExploreIcon />}
           activeIcon={<ExploreActiveIcon />}
         />
@@ -65,7 +63,7 @@ function TableSidebar() {
             marginRight: 0,
             borderBottom: '1px solid #ececec',
           }}
-          to={config.routes.live}
+          to={routesConfig.live}
           icon={<LiveIcon />}
           activeIcon={<LiveActiveIcon />}
         />

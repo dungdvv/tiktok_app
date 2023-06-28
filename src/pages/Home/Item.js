@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faComment, faHeart, faMusic, faShare, faTags } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
@@ -14,6 +14,8 @@ function Item({ isFirstVideo }) {
   const containerVideoRef = useRef();
   const [isVisible, setIsVisible] = useState(true);
   const [following, setFollowing] = useState(false);
+
+  const navigate = useNavigate();
   const handleFollow = () => {
     setFollowing(!following);
   };

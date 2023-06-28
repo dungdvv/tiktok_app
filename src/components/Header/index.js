@@ -17,7 +17,7 @@
 /**
  *
  */
-
+import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -25,7 +25,6 @@ import {
   faEarthAsia,
   faEllipsisVertical,
   faKeyboard,
-  faMessage,
   faCoins,
   faGear,
   faSignOut,
@@ -37,7 +36,6 @@ import 'tippy.js/dist/tippy.css';
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
-import Menu from '~/components/Popper/Menu';
 import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Search from '~/pages/Search';
 
@@ -45,10 +43,12 @@ import { useWindowSize } from '@uidotdev/usehooks';
 import { tableBreakPoint } from 'src/constants';
 
 import london from 'src/assets/images/london.jpg';
-import { createContext, useContext, useMemo, useState } from 'react';
-import Modal from './Modal';
-import { useHeader } from '../../DefaultLayout/HeaderContext';
+
+import ModalLogin from './ModalLogin';
 import { Link } from 'react-router-dom';
+import { useAuth } from '~/context/auth';
+import utilsLocalStorage from '~/utils/utilsLocalStorage';
+import Menu from '../Popper/PopperMenu';
 
 const cx = classNames.bind(styles);
 
@@ -84,8 +84,7 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-  const { currentUser, setCurrentUser } = useHeader();
-
+  const { user } = useAuth();
   const { width } = useWindowSize();
 
   // Handle logic
@@ -93,7 +92,8 @@ function Header() {
     console.log({ menuItem });
     switch (menuItem.type) {
       case 'logout':
-        setCurrentUser(false);
+        utilsLocalStorage.deleteToken();
+        window.location.reload();
         break;
       case 'language':
         // handle change lange
@@ -138,7 +138,6 @@ function Header() {
   };
 
   const handleLogin = () => {
-    setCurrentUser(true);
     handleCloseModal();
   };
 
@@ -150,7 +149,7 @@ function Header() {
         </Link>
         {width > tableBreakPoint ? <Search /> : ''}
         <div className={cx('actions')}>
-          {currentUser ? (
+          {user ? (
             <>
               <Tippy delay={[0, 50]} content="Upload video" placement="bottom">
                 <button className={cx('action-btn')}>
@@ -175,16 +174,12 @@ function Header() {
               <Button primary onClick={handleOpenModal}>
                 Log in
               </Button>
-              <Modal isOpen={isOpen} onClose={handleCloseModal}>
-                <Button primary onClick={handleLogin}>
-                  Login
-                </Button>
-              </Modal>
+              <ModalLogin isOpen={isOpen} onClose={handleCloseModal} />
             </>
           )}
 
-          <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
-            {currentUser ? (
+          <Menu items={user ? MENU_ITEMS : userMenu} onChange={handleMenuChange}>
+            {user ? (
               <img className={cx('user-avatar')} src={london} alt="Nguyen Thu Thao" />
             ) : (
               <button className={cx('more-btn')}>

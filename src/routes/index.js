@@ -1,8 +1,3 @@
-import routesConfig from '~/config/routes';
-
-// Layouts
-import { HeaderOnly } from '~/components/Layout';
-
 // Pages
 import Home from '~/pages/Home/Content';
 import Following from '~/pages/Following/Following';
@@ -12,6 +7,18 @@ import Search from '~/pages/Search';
 import Live from '~/pages/Live/Live';
 import Explore from '~/pages/Explore/Explore';
 import VideoDetail from '~/pages/VideoDetail';
+import HeaderOnly from '~/components/HeaderOnly';
+
+export const routesConfig = {
+  home: '/',
+  following: '/following',
+  profile: '/@:nickname',
+  upload: '/upload',
+  search: '/search',
+  live: '/live',
+  explore: '/explore',
+  videoDetail: '/video-detail/:id',
+};
 
 // Public routes
 const publicRoutes = [

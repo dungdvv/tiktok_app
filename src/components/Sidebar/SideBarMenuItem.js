@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import styles from './Menu.module.scss';
+import styles from './SideBarMenu.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -23,7 +23,7 @@ function MenuItem({ title, to, icon, activeIcon, isSmall = true, style }) {
 }
 
 MenuItem.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   to: PropTypes.string.isRequired,
   icon: PropTypes.node.isRequired,
   activeIcon: PropTypes.node.isRequired,

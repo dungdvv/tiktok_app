@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import GlobalStyles from '~/components/GlobalStyles';
 import logo from './assets/images/logo.svg';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { AuthProvider } from './context/auth';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient();
@@ -13,7 +14,9 @@ root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <GlobalStyles>
+        <AuthProvider>
           <App />
+        </AuthProvider>
       </GlobalStyles>
     </QueryClientProvider>
   </React.StrictMode>,
