@@ -35,28 +35,15 @@ const LoginByUserPassword = () => {
 
   if (isLoading) <div>Loading ...</div>;
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
+    <form className="wrapper" onSubmit={handleSubmit}>
+      <div className="title-modal">Login Form</div>
       <div style={{ color: 'red' }}>
         {errorState ? errorState : !!error?.response?.data?.message && error.response.data.message}
       </div>
-      <input
-        style={{ border: '1px solid black;', padding: 20 }}
-        onChange={({ target }) => setUsername(target.value)}
-        placeholder="username"
-      />
-      <input
-        style={{ border: '1px solid black;', padding: 20 }}
-        onChange={({ target }) => setPassword(target.value)}
-        placeholder="password"
-      />
-      <Button primary type="submit">
-        Submit
+      <input onChange={({ target }) => setUsername(target.value)} placeholder="username" />
+      <input onChange={({ target }) => setPassword(target.value)} placeholder="password" />
+      <Button className="button_modal-login" primary type="submit">
+        Login
       </Button>
     </form>
   );
@@ -90,6 +77,7 @@ const RegisterForm = () => {
   if (isLoading) <div>Loading ...</div>;
   return (
     <form
+      className="wrapper"
       onSubmit={handleSubmit}
       style={{
         display: 'flex',
@@ -99,23 +87,12 @@ const RegisterForm = () => {
       <div style={{ color: 'red' }}>
         {errorState ? errorState : !!error?.response?.data?.message && error.response.data.message}
       </div>
-      <input
-        style={{ border: '1px solid black;', padding: 20 }}
-        onChange={({ target }) => setEmail(target.value)}
-        placeholder="email"
-      />
-      <input
-        style={{ border: '1px solid black;', padding: 20 }}
-        onChange={({ target }) => setUsername(target.value)}
-        placeholder="username"
-      />
-      <input
-        style={{ border: '1px solid black;', padding: 20 }}
-        onChange={({ target }) => setPassword(target.value)}
-        placeholder="password"
-      />
-      <Button primary type="submit">
-        Submit
+
+      <input onChange={({ target }) => setEmail(target.value)} placeholder="email" />
+      <input onChange={({ target }) => setUsername(target.value)} placeholder="username" />
+      <input onChange={({ target }) => setPassword(target.value)} placeholder="password" />
+      <Button className="button_modal-login" primary type="submit">
+        Register
       </Button>
     </form>
   );
@@ -176,15 +153,15 @@ const ModalLogin = ({ isOpen, handleCloseModal }) => {
       )}
 
       {type === 'RegisterForm' ? (
-        <div>
-          Chưa có tài khoảng?
+        <div className="text">
+          Chưa có tài khoản?
           <span onClick={() => setType('LoginByUserPassword')} style={{ color: 'red', cursor: 'pointer' }}>
             Đăng nhập
           </span>
         </div>
       ) : (
-        <div>
-          Chưa có tài khoảng?
+        <div className="text">
+          Đã có tài khoản ?
           <span onClick={() => setType('RegisterForm')} style={{ color: 'red', cursor: 'pointer' }}>
             Đăng ký
           </span>

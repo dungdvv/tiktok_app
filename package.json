@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^4.1.0",
+    "concurrently": "^8.2.0",
     "customize-cra": "^1.0.0",
     "json-server": "^0.17.3",
     "react-app-rewired": "^2.2.1",

@@ -41,7 +41,7 @@ function Sidebar() {
       {user && <SuggestedAccounts label="Following Account" />}
 
       {!user && (
-        <div>
+        <div className={cx('title')}>
           <p>Đăng nhập để follow các tác giả, thích video và xem bình luận.</p>
           <Button primary>Log in</Button>
         </div>

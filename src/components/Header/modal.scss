@@ -56,7 +56,6 @@
       align-items: center;
       text-align: center;
       width: 100%;
-      
     }
     &:hover {
       background: rgba(236, 223, 223, 0.5);
@@ -71,4 +70,26 @@
     font-size: 12px;
     font-weight: 200;
   }
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 240px;
+  input {
+    border: 1px solid #ececec;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+  }
+  .title-modal {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+.button_modal-login {
+  margin-bottom: 2rem;
+  padding: 0.8rem 6.5rem;
+}
+.text {
+  text-align: center;
 }

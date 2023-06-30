@@ -26,6 +26,12 @@ function Item({ isFirstVideo }) {
     threshold: 1.0,
   };
 
+  const [like, setLike] = useState(false);
+  const handleClick = () => {
+    setLike(!like);
+  };
+  const heartColor = like ? '#fe2c55' : '#333';
+
   useEffect(() => {
     const observer = new IntersectionObserver(callbackFunction, options);
     const currentTarget = containerVideoRef.current;
@@ -108,7 +114,12 @@ function Item({ isFirstVideo }) {
               />
             )}
             <div className={cx('list-icons')}>
-              <FontAwesomeIcon className={cx('icon')} icon={faHeart} />
+              <FontAwesomeIcon
+                onClick={handleClick}
+                style={{ color: heartColor }}
+                className={cx('icon')}
+                icon={faHeart}
+              />
               <span className={cx('value-heart')}>139.5k</span>
               <Link to="/video-detail/123">
                 <FontAwesomeIcon className={cx('icon')} icon={faComment} />

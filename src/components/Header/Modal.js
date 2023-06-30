@@ -7,7 +7,9 @@ const Modal = ({ isOpen, onClose, children }) => {
     <>
       {isOpen && (
         <div className="modal-overlay">
-          <div className="modal">{children}</div>
+          <div onClick={onClose} className="modal">
+            {children}
+          </div>
         </div>
       )}
     </>
